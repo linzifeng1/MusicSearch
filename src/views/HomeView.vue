@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import AppDetails from '../components/AppDetails.vue'
 import LinNavbar from '../components/MyDesignComponents/Lin-Navbar.vue';
 </script>
 <template>
@@ -14,10 +13,11 @@ import LinNavbar from '../components/MyDesignComponents/Lin-Navbar.vue';
       <template #subnav>
         <div class="nav-subnav">
           <nav class="top-nav">
-            <a href="#" class="top-nav-item active">首页</a>
-            <a href="#" class="top-nav-item">交流群</a>
-            <a href="#" class="top-nav-item">问题反馈</a>
-            <a href="#" class="top-nav-item">捐赠列表</a>
+            <router-link to="/appDetail" class="top-nav-item" active-class="active">首页</router-link>
+            <router-link to="/conversation" class="top-nav-item" active-class="active">交流群</router-link>
+            <router-link to="/feedback" class="top-nav-item" active-class="active">问题反馈</router-link>
+            <router-link to="/update" class="top-nav-item" active-class="active">更新日志</router-link>
+            <router-link to="/donation" class="top-nav-item" active-class="active">捐赠列表</router-link>
           </nav>
         </div>
       </template>
@@ -27,7 +27,9 @@ import LinNavbar from '../components/MyDesignComponents/Lin-Navbar.vue';
         </div>
       </template>
     </LinNavbar>
-    <AppDetails style="margin-top: 100px;" />
+    <transition name="fade" mode="out-in">
+      <RouterView />
+    </transition>
     <div class="footer">
       <span class="copyright">2024-2025©音乐搜索 Power By 林峰</span>
     </div>
@@ -40,6 +42,7 @@ import LinNavbar from '../components/MyDesignComponents/Lin-Navbar.vue';
   width: 100%;
   justify-content: center;
   align-items: center;
+  padding-top: 60px;
 }
 
 .navbar {
@@ -139,5 +142,16 @@ import LinNavbar from '../components/MyDesignComponents/Lin-Navbar.vue';
   .copyright {
     font-size: 0.8rem;
   }
+}
+
+// 页面切换动画css样式
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 0.4s cubic-bezier(.4,0,.2,1);
+}
+.fade-enter-from, .fade-leave-to {
+  opacity: 0;
+}
+.fade-enter-to, .fade-leave-from {
+  opacity: 1;
 }
 </style>

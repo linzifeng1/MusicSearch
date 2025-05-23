@@ -1,27 +1,31 @@
 <script setup lang="ts">
-import LinButton from './MyDesignComponents/Lin-Button.vue';
-import LinCard from './MyDesignComponents/Lin-Card.vue';
+import LinButton from '../components/MyDesignComponents/Lin-Button.vue';
+import LinCard from '../components/MyDesignComponents/Lin-Card.vue';
+import imgOne from '../images/img-one.png';
+import imgTwo from '../images/img-two.jpg';
+import imgThree from '../images/img-three.jpg';
+import imgFour from '../images/img-four.jpg';
 // 模拟首页展示的用户数据
 const appDetails = [
   {
     'title': '页面简洁',
-    'subtitle': '软件整体页面设计简洁大方，观感舒适！',
-    'imgUrl': 'https://ts1.tc.mm.bing.net/th/id/R-C.da52d4d9acc6c7001f14b8196ea31252?rik=KsFqSh8Aem8YxQ&riu=http%3a%2f%2fi.52desktop.cn%3a81%2fupimg%2fallimg%2f20120904%2f201294183110109778084.jpg&ehk=qIzilzYgZiLrFrs3oSXhUfuSvqgjl83MwuwuR6ylX6c%3d&risl=&pid=ImgRaw&r=0',
+    'subtitle': '软件整体页面设计简洁，拒绝一切花里胡哨，简约而不简单！',
+    'imgUrl': imgOne,
   },
   {
     'title': '在线播放',
-    'subtitle': '软件内音乐均支持在线播放，歌词展示！',
-    'imgUrl': 'https://tse3-mm.cn.bing.net/th/id/OIP-C.cxed4QwRlZxDEzCuXwEa4wHaNK?rs=1&pid=ImgDetMain',
+    'subtitle': '软件内音乐均支持在线播放，歌词展示，播放流畅，是你的第一选择！',
+    'imgUrl': imgTwo,
   },
   {
     'title': '无损下载',
-    'subtitle': '软件内音乐支持无损下载，满足满足满足！',
-    'imgUrl': 'https://wallpaperm.cmcm.com/7c2092019b25247a6e7e67cdcd8da5db.jpg',
+    'subtitle': '软件内音乐支持无损下载，好听的音乐不该止步于此，满足满足满足！',
+    'imgUrl': imgThree,
   },
   {
     'title': '免费无广',
-    'subtitle': '软件无任何形式的广告，放心使用！',
-    'imgUrl': 'https://img-baofun.zhhainiao.com/fs/6fc46cefb7b776eac4d912345cc2b093.jpg',
+    'subtitle': '软件无任何形式的广告，拒绝广告，给用户更好的使用提要！',
+    'imgUrl': imgFour,
   }
 ]
 
@@ -31,7 +35,7 @@ const appDetails = [
     <div class="app-info-container">
       <img class="app-icon" src="../images/logo.jpg" alt="">
       <h2>音乐搜索</h2>
-      <span>将所有的烦恼都抛掷脑后</span>
+      <span>将所有的不开心都抛掷脑后</span>
       <div class="button-group">
         <LinButton>本地下载</LinButton>
         <LinButton>网盘下载</LinButton>
@@ -53,7 +57,7 @@ const appDetails = [
   display: flex;
   width: 100%;
   flex-direction: column;
-  padding-top: 60px;
+  padding-top: 100px;
 }
 
 .app-info-container {
@@ -63,7 +67,6 @@ const appDetails = [
   justify-content: center;
   align-items: center;
   text-align: center;
-
 
   .app-icon {
     width: 5rem;
